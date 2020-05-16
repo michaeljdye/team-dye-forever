@@ -17,9 +17,4 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: "Avenir";
   }
-
-  main {
-    width: 90%;
-    margin: 0 auto;
-  }
 `
