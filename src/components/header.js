@@ -52,6 +52,11 @@ const Nav = styled.nav`
   display: inherit;
   padding: 5px;
   margin: 0 0 0 auto;
+
+  a {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
 `
 
 Header.propTypes = {
