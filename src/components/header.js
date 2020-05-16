@@ -25,6 +25,14 @@ const Header = ({ siteTitle }) => (
           Guest Book
         </Link>
       </li>
+      <li>
+        <Link
+          style={{ color: `white`, textDecoration: `none`, padding: `5px` }}
+          to="/blog"
+        >
+          Blog
+        </Link>
+      </li>
     </Nav>
   </HeaderContainer>
 )
