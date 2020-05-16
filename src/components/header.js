@@ -1,35 +1,58 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
+
+import Logo from "../images/logo.png"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
+  <HeaderContainer>
+    <Link
+      to="/"
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        color: `white`,
+        textDecoration: `none`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <img src={Logo} alt="Joey and Nicole" width="200" />
+    </Link>
+    <Nav>
+      <li>
         <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+          style={{ color: `white`, textDecoration: `none`, padding: `5px` }}
+          to="/guest-book"
         >
-          {siteTitle}
+          Guest Book
         </Link>
-      </h1>
-    </div>
-  </header>
+      </li>
+    </Nav>
+  </HeaderContainer>
 )
+
+const HeaderContainer = styled.header`
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    -45deg,
+    rgb(151, 203, 185) 0%,
+    rgb(205, 230, 224) 100%
+  );
+  padding: 0.5rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-bottom: 0;
+  }
+`
+
+const Nav = styled.nav`
+  list-style: none;
+  display: inherit;
+  padding: 5px;
+  margin: 0 0 0 auto;
+`
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
