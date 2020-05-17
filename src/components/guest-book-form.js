@@ -6,6 +6,7 @@ import { colors } from "../utils"
 
 import WishesForBabyBannerImg from "../images/wishes-for-baby-banner.jpg"
 
+// TODO remove this comment
 const GuestBookForm = () => (
   <FormContainer
     name="contact"
