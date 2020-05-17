@@ -12,7 +12,7 @@ const Footer = () => {
 }
 
 const FooterContainer = styled.div`
-  background: ${colors.PrimaryLight};
+  background: ${colors.primaryLight};
 
   p {
     color: ${colors.primary};
@@ -21,7 +21,7 @@ const FooterContainer = styled.div`
     letter-spacing: 5px;
     font-weight: 600;
     margin: 10px 0 7px;
-    color: #fff;
+    color: ${colors.white};
   }
 `
 

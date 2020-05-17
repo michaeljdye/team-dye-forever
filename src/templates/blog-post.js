@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 
+import { colors } from "../utils"
+
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
   return (
@@ -19,7 +21,7 @@ export default function BlogPost({ data }) {
             text-transform: uppercase;
             letter-spacing: 5px;
             margin-bottom: 20px;
-            color: rgb(217, 159, 154);
+            color: ${colors.primary};
           `}
         >
           {post.frontmatter.title}
@@ -30,7 +32,7 @@ export default function BlogPost({ data }) {
               font-size: 1.025rem;
               letter-spacing: 0.06rem;
               line-height: 1.8rem;
-              color: rgb(68, 68, 68);
+              color: ${colors.text};
               margin-bottom: 30px;
             }
           `}
