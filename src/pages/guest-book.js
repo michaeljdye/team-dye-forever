@@ -9,7 +9,7 @@ import GuestBookBannerImg from "../images/guest-book-banner.jpg"
 const GuestBook = () => {
   return (
     <Layout>
-      <Banner img={GuestBookBannerImg} />
+      <Banner img={GuestBookBannerImg} width="contain" />
       <GuestBookForm />
     </Layout>
   )

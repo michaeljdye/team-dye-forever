@@ -18,20 +18,13 @@ const Header = ({ siteTitle }) => (
     </Link>
     <Nav>
       <li>
-        <Link
-          style={{ color: `white`, textDecoration: `none`, padding: `5px` }}
-          to="/guest-book"
-        >
-          Guest Book
-        </Link>
+        <Link to="/guest-book">Guest Book</Link>
       </li>
       <li>
-        <Link
-          style={{ color: `white`, textDecoration: `none`, padding: `5px` }}
-          to="/blog"
-        >
-          Blog
-        </Link>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <Link to="/blog">Blog</Link>
       </li>
     </Nav>
   </HeaderContainer>
@@ -45,7 +38,7 @@ const HeaderContainer = styled.header`
     rgb(151, 203, 185) 0%,
     rgb(205, 230, 224) 100%
   );
-  padding: 0.5rem;
+  padding: 1rem 4rem;
   height: 80px;
   display: flex;
   align-items: center;
@@ -58,10 +51,20 @@ const HeaderContainer = styled.header`
 const Nav = styled.nav`
   list-style: none;
   display: inherit;
-  padding: 5px;
   margin: 0 0 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  li {
+    &:not(:last-of-type) {
+      margin-right: 80px;
+    }
+  }
 
   a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
     font-size: 1.125rem;
     font-weight: 600;
   }

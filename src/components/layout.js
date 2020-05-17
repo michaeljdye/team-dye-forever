@@ -6,10 +6,12 @@
  */
 
 import React from "react"
+import styled from "styled-components"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 
 import { GlobalStyle } from "../utils"
 
@@ -25,15 +27,26 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <LayoutContainer>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
+      <SiteContent>
         <main>{children}</main>
-      </div>
+      </SiteContent>
+      <Footer />
       <GlobalStyle />
-    </>
+    </LayoutContainer>
   )
 }
+
+const LayoutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
+const SiteContent = styled.div`
+  flex: 1;
+`
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
