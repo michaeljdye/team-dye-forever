@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Img = ({ src, alt }) => {
+  // TODO delete this comment
   return (
     <ImgContainer>
       <img src={src} alt={alt} />
