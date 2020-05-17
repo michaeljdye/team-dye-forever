@@ -21,7 +21,16 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Avenir";
   }
 
-  h2 {
+  h1,
+  h2,
+  h3 {
     color: ${colors.primary}
+  }
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    color: ${colors.primary};
   }
 `

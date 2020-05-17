@@ -12,12 +12,16 @@ const GuestBookForm = () => (
     method="post"
     netlify-honeypot="bot-field"
     data-netlify="true"
-    action="/"
+    action="/thank-you"
   >
     <input type="hidden" name="form-name" value="contact" />
     <label>
-      Name
+      Your name
       <input type="text" name="Name" required />
+    </label>
+    <label>
+      Your home address (so we can mail you a thank you card)
+      <input type="text" name="Address" />
     </label>
     <label>
       Message for Joey and Nicole{" "}
@@ -25,43 +29,43 @@ const GuestBookForm = () => (
     </label>
     <Banner img={WishesForBabyBannerImg} width="contain" />
     <label>
-      I hope that you learn
+      Baby, I hope that you learn
       <input type="text" name="I hope that you learn" required />
     </label>
     <label>
-      I hope that you aren't afraid
+      Baby, I hope that you aren't afraid
       <input type="text" name="I hope that you aren't afraid" required />
     </label>
     <label>
-      I hope you love
+      Baby, I hope you love
       <input type="text" name="I hope you love" required />
     </label>
     <label>
-      I hope you get
+      Baby, I hope you get
       <input type="text" name="I hope you get" required />
     </label>
     <label>
-      I hope you laugh
+      Baby, I hope you laugh
       <input type="text" name="I hope you laugh" required />
     </label>
     <label>
-      I hope you never forget
+      Baby, I hope you never forget
       <input type="text" name="I hope you never forget" required />
     </label>
     <label>
-      I hope you ignore
+      Baby, I hope you ignore
       <input type="text" name="I hope you ignore" required />
     </label>
     <label>
-      I hope you become
+      Baby, I hope you become
       <input type="text" name="I hope you become" required />
     </label>
     <label>
-      I hope you respect
+      Baby, I hope you respect
       <input type="text" name="I hope you respect" required />
     </label>
     <label>
-      I hope you grow
+      Baby, I hope you grow
       <input type="text" name="I hope you grow" required />
     </label>
     <button type="submit">Submit</button>

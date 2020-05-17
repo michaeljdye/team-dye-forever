@@ -10,7 +10,6 @@ import { colors } from "../utils"
 const shortcodes = { Link } // Provide common components here
 
 export default function BlogPost({ data: { mdx } }) {
-  // TODO remove this comment
   return (
     <Layout>
       <div
@@ -28,16 +27,7 @@ export default function BlogPost({ data: { mdx } }) {
           }
         `}
       >
-        <h1
-          css={`
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            color: ${colors.primary};
-          `}
-        >
-          {mdx.frontmatter.title}
-        </h1>
+        <h1>{mdx.frontmatter.title}</h1>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>

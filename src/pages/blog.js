@@ -10,7 +10,7 @@ import BlogHeroImg from "../images/blog-hero.jpg"
 export default function Blog() {
   return (
     <Layout>
-      <Banner img={BlogHeroImg} width="cover" />
+      <Banner img={BlogHeroImg} width="cover" mbHeight="15vh" />
       <BlogContainer>
         <PostLoop />
       </BlogContainer>
