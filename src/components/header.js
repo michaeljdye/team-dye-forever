@@ -5,6 +5,8 @@ import styled from "styled-components"
 
 import Logo from "../images/logo.png"
 
+import { below } from "../utils"
+
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
     <Link
@@ -32,6 +34,7 @@ const Header = ({ siteTitle }) => (
 
 const HeaderContainer = styled.header`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   background: linear-gradient(
     -45deg,
@@ -42,6 +45,10 @@ const HeaderContainer = styled.header`
   height: 80px;
   display: flex;
   align-items: center;
+
+  ${below.phone`
+    height: 150px;
+  `}
 
   img {
     margin-bottom: 0;
@@ -58,6 +65,10 @@ const Nav = styled.nav`
   li {
     &:not(:last-of-type) {
       margin-right: 80px;
+
+      ${below.phone`
+        margin-right: 10px;
+      `}
     }
   }
 

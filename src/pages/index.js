@@ -67,6 +67,7 @@ const IndexPage = () => (
 
 const AboutSection = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 60px 0 0 0;
@@ -107,6 +108,7 @@ const AboutContent = styled.div`
 
 const CTASection = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 60px 0 120px;
 

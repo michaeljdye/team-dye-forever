@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 import { ButtonPrimary } from "../components/buttons"
+import { below } from "../utils"
 
 const PostLoop = () => {
   const data = useStaticQuery(graphql`
@@ -62,6 +63,10 @@ const BlogCards = styled.div`
   justify-content: center;
   margin: 0 auto 40px;
   max-width: 1000px;
+
+  ${below.phone`
+    flex-direction: column;
+  `}
 `
 
 const BlogCard = styled.div`
@@ -71,6 +76,12 @@ const BlogCard = styled.div`
   align-items: center;
   box-shadow: 0px 0px 26px 6px #e2e2e2;
   padding: 0px 0px 40px;
+
+  ${below.phone`
+    &:not(:first-of-type) {
+      margin-top: 40px;
+    }
+  `}
 
   h3 {
     margin-bottom: 20px;
@@ -95,6 +106,10 @@ const BlogCard = styled.div`
 
   &:not(:last-of-type) {
     margin-right: 40px;
+
+    ${below.phone`
+      margin-right: 0;
+    `}
   }
 
   > div:first-of-type {
