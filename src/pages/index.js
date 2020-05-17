@@ -6,6 +6,7 @@ import Banner from "../components/banner"
 import SEO from "../components/seo"
 import PostLoop from "../components/post-loop"
 import { ButtonPrimary } from "../components/buttons"
+import { below } from "../utils"
 
 import HeroImg from "../images/hero-img.jpg"
 import AboutImg from "../images/about-section.jpg"
@@ -15,7 +16,7 @@ import GuestBookBannerImg from "../images/guest-book-banner.jpg"
 
 const IndexPage = () => (
   <Layout>
-    <Banner img={HeroImg} width="cover" />
+    <Banner img={HeroImg} width="cover" mbHeight="15vh" />
     <AboutSection id="about">
       <AboutVisual>
         <div>
@@ -74,7 +75,7 @@ const AboutSection = styled.div`
 `
 const AboutVisual = styled.div`
   div {
-    width: 400px;
+    max-width: 400px;
   }
 
   img {
@@ -112,11 +113,19 @@ const CTASection = styled.div`
   justify-content: center;
   padding: 60px 0 120px;
 
+  ${below.phone`
+    padding-top: 0;
+  `}
+
   div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  > div:last-of-type {
+    padding-top: 20px;
   }
 
   img {
@@ -126,7 +135,7 @@ const CTASection = styled.div`
 `
 
 const CTAImgContainer = styled.div`
-  width: 600px;
+  max-width: 600px;
   padding: 40px;
 `
 

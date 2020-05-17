@@ -64,12 +64,16 @@ const Nav = styled.nav`
   text-transform: uppercase;
   letter-spacing: 5px;
 
+  ${below.phone`
+      margin: 0 auto;
+  `}
+
   li {
     &:not(:last-of-type) {
       margin-right: 80px;
 
       ${below.phone`
-        font-size: 1rem;
+        margin-right: 10px;
       `}
     }
   }
@@ -80,6 +84,12 @@ const Nav = styled.nav`
     padding: 5px;
     font-size: 1.125rem;
     font-weight: 600;
+
+    ${below.phone`
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1.2;
+    `}
   }
 `
 

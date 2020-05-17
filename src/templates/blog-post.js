@@ -14,7 +14,8 @@ export default function BlogPost({ data: { mdx } }) {
     <Layout>
       <div
         css={`
-          max-width: 1000px;
+          width: 1000px;
+          max-width: 90%;
           margin: 40px auto;
 
           p {

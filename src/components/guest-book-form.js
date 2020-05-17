@@ -71,7 +71,8 @@ const GuestBookForm = () => (
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 900px;
+  width: 900px;
+  max-width: 90%;
   margin: 0 auto 80px;
 
   input {

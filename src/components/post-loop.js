@@ -76,8 +76,10 @@ const BlogCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 90%;
   box-shadow: 0px 0px 26px 6px #e2e2e2;
   padding: 0px 0px 40px;
+  margin: 0 auto;
 
   ${below.phone`
     &:not(:first-of-type) {
@@ -110,7 +112,7 @@ const BlogCard = styled.div`
     margin-right: 40px;
 
     ${below.phone`
-      margin-right: 0;
+      margin-right: auto;
     `}
   }
 
