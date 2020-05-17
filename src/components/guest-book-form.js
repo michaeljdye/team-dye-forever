@@ -83,6 +83,7 @@ const FormContainer = styled.form`
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0 30px;
+    border: 1px solid ${colors.dark};
     box-sizing: border-box;
   }
 
@@ -95,6 +96,7 @@ const FormContainer = styled.form`
     text-transform: uppercase;
     letter-spacing: 3px;
     color: ${colors.white};
+    cursor: pointer;
   }
 `
 

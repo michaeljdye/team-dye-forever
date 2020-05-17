@@ -3,4 +3,5 @@ export const colors = {
   primaryLight: "#F0C4B6",
   text: "rgb(68, 68, 68)",
   white: "#FFFFFF",
+  dark: "#333333",
 }

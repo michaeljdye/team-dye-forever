@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { colors } from "../utils"
+import { colors, below } from "../utils"
 
 const Footer = () => {
   return (
@@ -15,13 +15,18 @@ const FooterContainer = styled.div`
   background: ${colors.primaryLight};
 
   p {
+    max-width: 90%;
+    margin: 10px auto;
     color: ${colors.primary};
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: 600;
-    margin: 10px 0 7px;
     color: ${colors.white};
+
+    ${below.phone`
+      font-size: 0.75rem;
+    `}
   }
 `
 

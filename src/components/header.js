@@ -30,7 +30,6 @@ const Header = ({ siteTitle }) => (
 
 const HeaderContainer = styled.header`
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   background: linear-gradient(
     -45deg,
@@ -42,12 +41,13 @@ const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
 
-  ${below.phone`
+  ${below.tablet`
+    flex-direction: column;
     justify-content: center;
     padding: 1rem 10px;
   `}
 
-  ${below.phone`
+  ${below.tablet`
     height: 150px;
   `}
 
@@ -64,15 +64,15 @@ const Nav = styled.nav`
   text-transform: uppercase;
   letter-spacing: 5px;
 
-  ${below.phone`
-      margin: 0 auto;
+  ${below.tablet`
+      margin: 20px auto 0;
   `}
 
   li {
     &:not(:last-of-type) {
       margin-right: 80px;
 
-      ${below.phone`
+      ${below.tablet`
         margin-right: 10px;
       `}
     }

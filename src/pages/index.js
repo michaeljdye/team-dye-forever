@@ -26,13 +26,13 @@ const IndexPage = () => (
       <AboutContent>
         <h2>About Us</h2>
         <p>
-          A little about us: We’re both extremely techy people who love
-          traveling and doing nerdy things together (we’ve been known to have
-          arguments over web best practices). Nicole is a Creative Director for
-          an agency and Joey is a Front End Developer for the software company,
-          Campaign Monitor. Join us in our journey into parenthood. We’re very
-          excited as to what’s to come next and hope you keep in touch and enjoy
-          our updates, we’ll try to keep them as current as life allows.
+          A little about us: We’re both extremely techy people who love to
+          travel and do nerdy things together (hence why we made this website).
+          Nicole is a Creative Director for a marketing agency and Joey is a
+          Frontend Developer for the tech company, Campaign Monitor. Join us in
+          our journey into parenthood. We’re very excited for what's to come
+          next and hope you keep in touch and enjoy our updates—we’ll try to
+          keep them as current as life allows.
         </p>
       </AboutContent>
     </AboutSection>
@@ -137,6 +137,8 @@ const CTAImgContainer = styled.div`
 `
 
 const BlogSection = styled.div`
+  max-width: 90%;
+  margin: 0 auto;
   padding: 60px 0;
 
   h2,

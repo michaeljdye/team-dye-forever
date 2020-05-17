@@ -12,7 +12,7 @@ const BannerContainer = styled.div`
     ${({ width = "cover" }) => width} no-repeat;
   height: 50vh;
 
-  ${below.phone`
+  ${below.tablet`
     height: ${({ mbHeight = "50vh" }) => mbHeight};
   `}
 `

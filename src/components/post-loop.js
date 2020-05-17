@@ -20,7 +20,7 @@ const PostLoop = () => {
               featuredImage {
                 id
                 childImageSharp {
-                  fluid(maxWidth: 500, quality: 100) {
+                  fluid(quality: 100) {
                     ...GatsbyImageSharpFluid
                     ...GatsbyImageSharpFluidLimitPresentationSize
                   }
@@ -66,7 +66,7 @@ const BlogCards = styled.div`
   margin: 0 auto 40px;
   max-width: 1000px;
 
-  ${below.phone`
+  ${below.tablet`
     flex-direction: column;
   `}
 `
@@ -81,7 +81,7 @@ const BlogCard = styled.div`
   padding: 0px 0px 40px;
   margin: 0 auto;
 
-  ${below.phone`
+  ${below.tablet`
     &:not(:first-of-type) {
       margin-top: 40px;
     }
@@ -92,6 +92,10 @@ const BlogCard = styled.div`
     text-transform: uppercase;
     letter-spacing: 5px;
     color: #d99f9a;
+
+    ${below.tablet`
+      padding-top: 20px;
+    `}
   }
 
   p {
@@ -111,7 +115,7 @@ const BlogCard = styled.div`
   &:not(:last-of-type) {
     margin-right: 40px;
 
-    ${below.phone`
+    ${below.tablet`
       margin-right: auto;
     `}
   }
