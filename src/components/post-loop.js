@@ -9,14 +9,16 @@ import { below } from "../utils"
 const PostLoop = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-        totalCount
+      allMdx {
         edges {
           node {
             id
+            excerpt
             frontmatter {
               title
+              slug
               featuredImage {
+                id
                 childImageSharp {
                   fluid(maxWidth: 500, quality: 100) {
                     ...GatsbyImageSharpFluid
@@ -25,19 +27,17 @@ const PostLoop = () => {
                 }
               }
             }
-            fields {
-              slug
-            }
-            excerpt
           }
         }
       }
     }
   `)
 
+  const { edges: posts } = data.allMdx
+
   return (
     <BlogCards>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
+      {posts.map(({ node }) => (
         <BlogCard key={node.id}>
           <div>
             <Img
@@ -46,11 +46,13 @@ const PostLoop = () => {
             />
           </div>
           <div>
-            <Link to={node.fields.slug}>
+            <Link to={`blog/${node.frontmatter.slug}`}>
               <h3>{node.frontmatter.title}</h3>
             </Link>
             <p>{node.excerpt}</p>
-            <ButtonPrimary link={node.fields.slug}>Read More</ButtonPrimary>
+            <ButtonPrimary link={`blog/${node.frontmatter.slug}`}>
+              Read More
+            </ButtonPrimary>
           </div>
         </BlogCard>
       ))}
