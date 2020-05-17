@@ -8,7 +8,6 @@ import Banner from "../components/banner"
 import BlogHeroImg from "../images/blog-hero.jpg"
 
 export default function Blog() {
-  // TODO remove this comment
   return (
     <Layout>
       <Banner img={BlogHeroImg} width="cover" />
