@@ -9,14 +9,10 @@ import { below } from "../utils"
 
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
-    <Link
-      to="/"
-      style={{
-        color: `white`,
-        textDecoration: `none`,
-      }}
-    >
-      <img src={Logo} alt="Joey and Nicole" width="200" />
+    <Link to="/">
+      <ImgContainer>
+        <img src={Logo} alt="Joey and Nicole" />
+      </ImgContainer>
     </Link>
     <Nav>
       <li>
@@ -47,10 +43,16 @@ const HeaderContainer = styled.header`
   align-items: center;
 
   ${below.phone`
+    justify-content: center;
+    padding: 1rem 10px;
+  `}
+
+  ${below.phone`
     height: 150px;
   `}
 
   img {
+    max-width: 100%;
     margin-bottom: 0;
   }
 `
@@ -67,7 +69,7 @@ const Nav = styled.nav`
       margin-right: 80px;
 
       ${below.phone`
-        margin-right: 10px;
+        font-size: 1rem;
       `}
     }
   }
@@ -79,6 +81,10 @@ const Nav = styled.nav`
     font-size: 1.125rem;
     font-weight: 600;
   }
+`
+
+const ImgContainer = styled.div`
+  width: 150px;
 `
 
 Header.propTypes = {

@@ -10,8 +10,8 @@ import { ButtonPrimary } from "../components/buttons"
 import HeroImg from "../images/hero-img.jpg"
 import AboutImg from "../images/about-section.jpg"
 import PolaroidBanner from "../images/polaroid-banner.jpg"
-import WishesForBabyBanner from "../images/wishes-for-baby-banner.jpg"
-import GuestBookBanner from "../images/guest-book-banner.jpg"
+import WishesForBabyBannerImg from "../images/wishes-for-baby-banner.jpg"
+import GuestBookBannerImg from "../images/guest-book-banner.jpg"
 
 const IndexPage = () => (
   <Layout>
@@ -25,26 +25,26 @@ const IndexPage = () => (
       <AboutContent>
         <h2>About Us</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          A little about us: We’re both extremely techy people who love
+          traveling and doing nerdy things together (we’ve been known to have
+          arguments over web best practices). Nicole is a Creative Director for
+          an agency and Joey is a Front End Developer for the software company,
+          Campaign Monitor. Join us in our journey into parenthood. We’re very
+          excited as to what’s to come next and hope you keep in touch and enjoy
+          our updates, we’ll try to keep them as current as life allows.
         </p>
       </AboutContent>
     </AboutSection>
     <CTASection>
       <div>
         <CTAImgContainer>
-          <img src={WishesForBabyBanner} alt="Joey, Nicole and baby" />
+          <img src={WishesForBabyBannerImg} alt="Joey, Nicole and baby" />
         </CTAImgContainer>
         <ButtonPrimary link="/guest-book">Sign guest book</ButtonPrimary>
       </div>
       <div>
         <CTAImgContainer>
-          <img src={GuestBookBanner} alt="Joey, Nicole and baby" />
+          <img src={GuestBookBannerImg} alt="Joey, Nicole and baby" />
         </CTAImgContainer>
         <ButtonPrimary link="/guest-book">Send wishes for baby</ButtonPrimary>
       </div>
