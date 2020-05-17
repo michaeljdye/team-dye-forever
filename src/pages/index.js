@@ -1,6 +1,4 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -42,13 +40,13 @@ const IndexPage = () => (
         <CTAImgContainer>
           <img src={WishesForBabyBanner} alt="Joey, Nicole and baby" />
         </CTAImgContainer>
-        <ButtonPrimary>Sign guest book</ButtonPrimary>
+        <ButtonPrimary link="/guest-book">Sign guest book</ButtonPrimary>
       </div>
       <div>
         <CTAImgContainer>
           <img src={GuestBookBanner} alt="Joey, Nicole and baby" />
         </CTAImgContainer>
-        <ButtonPrimary>Send wishes for baby</ButtonPrimary>
+        <ButtonPrimary link="/guest-book">Send wishes for baby</ButtonPrimary>
       </div>
     </CTASection>
     <Banner img={PolaroidBanner} width="cover" />

@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => (
         <Link to="/guest-book">Guest Book</Link>
       </li>
       <li>
-        <a href="#about">About</a>
+        <Link to="/#about">About</Link>
       </li>
       <li>
         <Link to="/blog">Blog</Link>
