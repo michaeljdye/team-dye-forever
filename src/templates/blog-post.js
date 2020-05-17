@@ -10,6 +10,7 @@ import { colors } from "../utils"
 const shortcodes = { Link } // Provide common components here
 
 export default function BlogPost({ data: { mdx } }) {
+  // TODO remove this comment
   return (
     <Layout>
       <div
