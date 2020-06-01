@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Team Dye Forever`,
@@ -63,7 +65,17 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-mdx`,
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "j7t5zwvc",
+        dataset: "production",
 
+        // a token with read permissions is required
+        // if you have a private dataset
+        token: process.env.SANITY_TOKEN,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
