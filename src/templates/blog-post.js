@@ -1,15 +1,16 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
 
 import { colors } from "../utils"
 
-const shortcodes = { Link } // Provide common components here
-
-export default function BlogPost({ data: { mdx } }) {
+export default function BlogPost({
+  data: {
+    sanityPost: { title, _rawBody },
+  },
+}) {
+  console.log(_rawBody)
   return (
     <Layout>
       <div
@@ -27,10 +28,14 @@ export default function BlogPost({ data: { mdx } }) {
           }
         `}
       >
-        <h1>{mdx.frontmatter.title}</h1>
-        <MDXProvider components={shortcodes}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
+        <h1>{title}</h1>
+        <div>
+          {_rawBody.map(({ _type, children, asset }) => {
+            if (_type === "block") {
+              return children.map(child => <p>{child.text}</p>)
+            }
+          })}
+        </div>
       </div>
     </Layout>
   )
@@ -38,12 +43,10 @@ export default function BlogPost({ data: { mdx } }) {
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
-    mdx(id: { eq: $id }) {
+    sanityPost(id: { eq: $id }) {
       id
-      body
-      frontmatter {
-        title
-      }
+      title
+      _rawBody
     }
   }
 `

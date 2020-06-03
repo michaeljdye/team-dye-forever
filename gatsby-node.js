@@ -26,12 +26,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allMdx {
+      allSanityPost {
         edges {
           node {
             id
-            fields {
-              slug
+            slug {
+              _key
+              _type
+              current
             }
           }
         }
@@ -42,13 +44,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
   // Create blog post pages.
-  const posts = result.data.allMdx.edges
+  const posts = result.data.allSanityPost.edges
   // you'll call `createPage` for each result
   posts.forEach(({ node }, index) => {
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
-      path: node.fields.slug,
+      path: node.slug.current,
       // This component will wrap our MDX content
       component: path.resolve(`./src/templates/blog-post.js`),
       // You can use the values in this context in
