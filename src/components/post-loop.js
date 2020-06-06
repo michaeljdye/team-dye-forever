@@ -1,56 +1,57 @@
-import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import styled from "styled-components"
+import React from 'react'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import imageUrlBuilder from '@sanity/image-url'
+import styled from 'styled-components'
 
-import { ButtonPrimary } from "../components/buttons"
-import { below } from "../utils"
+import { ButtonPrimary } from '../components/buttons'
+import { below } from '../utils'
+
+const builder = imageUrlBuilder({
+  projectId: 'j7t5zwvc',
+  dataset: 'production',
+})
+
+function urlFor(source) {
+  return builder.image(source)
+}
 
 const PostLoop = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-        edges {
-          node {
-            id
-            excerpt
-            frontmatter {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allSanityPost {
+          edges {
+            node {
+              id
               title
-              slug
-              featuredImage {
-                id
-                childImageSharp {
-                  fluid(quality: 100) {
-                    ...GatsbyImageSharpFluid
-                    ...GatsbyImageSharpFluidLimitPresentationSize
-                  }
-                }
+              _rawMainImage
+              slug {
+                _key
+                _type
+                current
               }
             }
           }
         }
       }
-    }
-  `)
+    `
+  )
 
-  const { edges: posts } = data.allMdx
+  const { edges: posts } = data.allSanityPost
 
   return (
     <BlogCards>
-      {posts.map(({ node }) => (
-        <BlogCard key={node.id}>
+      {posts.map(({ node: { id, title, slug, _rawMainImage } }) => (
+        <BlogCard key={id}>
           <div>
-            <Img
-              fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-              style={{ width: "100%", height: 200 }}
-            />
+            <img src={urlFor(_rawMainImage).url()} />
           </div>
           <div>
-            <Link to={`blog/${node.frontmatter.slug}`}>
-              <h3>{node.frontmatter.title}</h3>
+            <Link to={`blog/${slug.current}`}>
+              <h3>{title}</h3>
             </Link>
-            <p>{node.excerpt}</p>
-            <ButtonPrimary link={`blog/${node.frontmatter.slug}`}>
+            {/* <p>{excerpt}</p> */}
+            <ButtonPrimary link={`blog/${slug.current}`}>
               Read More
             </ButtonPrimary>
           </div>
@@ -77,6 +78,7 @@ const BlogCard = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 90%;
+  width: 350px;
   box-shadow: 0px 0px 26px 6px #e2e2e2;
   padding: 0px 0px 40px;
   margin: 0 auto;
@@ -86,6 +88,13 @@ const BlogCard = styled.div`
       margin-top: 40px;
     }
   `}
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+  }
 
   h3 {
     margin-bottom: 20px;

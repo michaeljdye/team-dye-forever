@@ -2,9 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import Banner from "../components/banner"
-
-import ItsAGirlImg from "../images/blogs/he-or-she/its-a-girl.jpg"
 
 const ThankYou = () => {
   return (
@@ -15,7 +12,6 @@ const ThankYou = () => {
           We appreciate your kind words and look forward to sharing them with
           our little one once they get older.
         </p>
-        <Banner img={ItsAGirlImg} width="contain" />
       </ThankYouContainer>
     </Layout>
   )
