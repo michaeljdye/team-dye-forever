@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import BlockContent from "@sanity/block-content-to-react"
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import BlockContent from '@sanity/block-content-to-react'
 
-import Layout from "../components/layout"
+import Layout from '../components/layout'
 
-import { colors } from "../utils"
+import { colors } from '../utils'
 
 const serializers = {
   types: {
@@ -27,25 +27,25 @@ export default function BlogPost({
     <Layout>
       <div
         css={`
-          width: 1000px;
+          width: 800px;
           max-width: 90%;
           margin: 40px auto;
 
           p {
+            max-width: 800px;
+            margin-bottom: 30px;
             font-size: 1.025rem;
             letter-spacing: 0.06rem;
             line-height: 1.8rem;
             color: ${colors.text};
-            margin-bottom: 30px;
           }
 
           figure {
-            margin: 0 auto;
-            text-align: center;
+            margin: 0;
           }
 
           img {
-            width: 500px;
+            width: 800px;
             max-width: 100%;
           }
         `}
