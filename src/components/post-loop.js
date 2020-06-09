@@ -24,6 +24,7 @@ const PostLoop = () => {
             node {
               id
               title
+              excerpt
               _rawMainImage
               slug {
                 _key
@@ -41,7 +42,7 @@ const PostLoop = () => {
 
   return (
     <BlogCards>
-      {posts.map(({ node: { id, title, slug, _rawMainImage } }) => (
+      {posts.map(({ node: { id, title, excerpt, slug, _rawMainImage } }) => (
         <BlogCard key={id}>
           <div>
             <img src={urlFor(_rawMainImage).url()} />
@@ -50,6 +51,7 @@ const PostLoop = () => {
             <Link to={`blog/${slug.current}`}>
               <h3>{title}</h3>
             </Link>
+            <p>{`${excerpt.split(' ').slice(0, 20).join(' ')}...`}</p>
             {/* <p>{excerpt}</p> */}
             <ButtonPrimary link={`blog/${slug.current}`}>
               Read More
