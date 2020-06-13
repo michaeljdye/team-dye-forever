@@ -1,4 +1,4 @@
-require("dotenv").config()
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
@@ -26,21 +26,23 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`, // This path is relative to the root of the site.
+        icons: [],
+        include_favicon: false, // This will exclude favicon link tag
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,
-        name: "images",
+        name: 'images',
       },
     },
     `gatsby-plugin-styled-components`,
     {
-      resolve: "gatsby-source-sanity",
+      resolve: 'gatsby-source-sanity',
       options: {
-        projectId: "j7t5zwvc",
-        dataset: "production",
+        projectId: 'j7t5zwvc',
+        dataset: 'production',
 
         // a token with read permissions is required
         // if you have a private dataset

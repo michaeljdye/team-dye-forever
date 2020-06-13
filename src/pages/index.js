@@ -1,18 +1,18 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-import Layout from "../components/layout"
-import Banner from "../components/banner"
-import SEO from "../components/seo"
-import PostLoop from "../components/post-loop"
-import { ButtonPrimary } from "../components/buttons"
-import { below } from "../utils"
+import Layout from '../components/layout'
+import Banner from '../components/banner'
+import SEO from '../components/seo'
+import PostLoop from '../components/post/post-loop'
+import { ButtonPrimary } from '../components/buttons'
+import { below } from '../utils'
 
-import HeroImg from "../images/hero-img.jpg"
-import AboutImg from "../images/about-section.jpg"
-import PolaroidBanner from "../images/polaroid-banner.jpg"
-import WishesForBabyBannerImg from "../images/wishes-for-baby-banner.jpg"
-import GuestBookBannerImg from "../images/guest-book-banner.jpg"
+import HeroImg from '../images/hero-img.jpg'
+import AboutImg from '../images/about-section.jpg'
+import PolaroidBanner from '../images/polaroid-banner.jpg'
+import WishesForBabyBannerImg from '../images/wishes-for-baby-banner.jpg'
+import GuestBookBannerImg from '../images/guest-book-banner.jpg'
 
 const IndexPage = () => (
   <Layout>

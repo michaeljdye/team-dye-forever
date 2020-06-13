@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import BlockContent from '@sanity/block-content-to-react'
 
 import Layout from '../components/layout'
