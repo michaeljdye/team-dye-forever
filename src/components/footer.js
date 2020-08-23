@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-import { colors, below } from "../utils"
+import { colors, below } from '../utils'
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
 }
 
 const FooterContainer = styled.div`
-  background: ${colors.primaryLight};
+  background: ${colors.dark};
 
   p {
     max-width: 90%;

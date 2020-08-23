@@ -37,20 +37,18 @@ const PostCardWrapper = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 90%;
-  width: 350px;
+  width: 750px;
   box-shadow: 0px 0px 26px 6px #e2e2e2;
   padding: 0px 0px 40px;
   margin: 0 auto;
 
-  ${below.tablet`
-    &:not(:first-of-type) {
-      margin-top: 40px;
-    }
-  `}
+  &:not(:first-of-type) {
+    margin-top: 40px;
+  }
 
   img {
     width: 100%;
-    height: 200px;
+    height: 400px;
     object-fit: cover;
     object-position: center center;
   }
@@ -60,10 +58,7 @@ const PostCardWrapper = styled.div`
     text-transform: uppercase;
     letter-spacing: 5px;
     color: #d99f9a;
-
-    ${below.tablet`
-      padding-top: 20px;
-    `}
+    padding-top: 20px;
   }
 
   p {
@@ -82,10 +77,7 @@ const PostCardWrapper = styled.div`
 
   &:not(:last-of-type) {
     margin-right: 40px;
-
-    ${below.tablet`
-      margin-right: auto;
-    `}
+    margin-right: auto;
   }
 
   > div:first-of-type {
