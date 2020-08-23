@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import imageUrlBuilder from '@sanity/image-url'
 import { Link } from 'gatsby'
 
-import { below } from '../../utils'
 import { ButtonPrimary } from '../buttons'
 
 const builder = imageUrlBuilder({
@@ -33,13 +32,12 @@ const PostCard = ({ id, title, slug, excerpt, image }) => (
 
 const PostCardWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 90%;
-  width: 750px;
+  width: 900px;
   box-shadow: 0px 0px 26px 6px #e2e2e2;
-  padding: 0px 0px 40px;
+  padding: 0;
   margin: 0 auto;
 
   &:not(:first-of-type) {
@@ -57,7 +55,6 @@ const PostCardWrapper = styled.div`
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: #d99f9a;
     padding-top: 20px;
   }
 

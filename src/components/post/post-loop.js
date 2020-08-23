@@ -2,8 +2,6 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
-import { below } from '../../utils'
-
 import PostCard from './post-card'
 
 const PostLoop = ({ currentCategory = 'all' }) => {

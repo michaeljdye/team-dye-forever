@@ -5,11 +5,8 @@ import Layout from '../components/layout'
 import Banner from '../components/banner'
 import SEO from '../components/seo'
 import PostLoop from '../components/post/post-loop'
-import { ButtonPrimary } from '../components/buttons'
-import { below } from '../utils'
 
 import NashvilleImg from '../images/nashville.jpg'
-import GuestBookBannerImg from '../images/guest-book-banner.jpg'
 
 const IndexPage = () => (
   <Layout>
