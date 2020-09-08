@@ -10,11 +10,13 @@ const IndexPage = () => (
     <Banner>
       <h1>Welcome to our site</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        pulvinar magna felis, et maximus orci porta eu. Nunc nec suscipit nulla.
-        Phasellus sed nunc sit amet augue aliquam ornare. Suspendisse congue,
-        eros molestie convallis sagittis, dui purus pulvinar velit, vitae
-        efficitur lorem magna at orci. Sed eu ante sed odio facilisis faucibus.
+        A little about us: We’re both extremely techy people who love to travel
+        and do nerdy things together (hence why we made this website). Nicole is
+        a Creative Director for a marketing agency and Joey is a Frontend
+        Developer for the tech company, Campaign Monitor. Join us in our journey
+        into parenthood. We’re very excited for what's to come next and hope you
+        keep in touch and enjoy our updates—we’ll try to keep them as current as
+        life allows.
       </p>
     </Banner>
     <BlogSection>

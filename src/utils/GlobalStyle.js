@@ -1,7 +1,7 @@
-import { createGlobalStyle } from "styled-components"
-import { normalize } from "polished"
+import { createGlobalStyle } from 'styled-components'
+import { normalize } from 'polished'
 
-import { colors } from "./colors"
+import { colors } from './colors'
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize()}
@@ -32,5 +32,9 @@ export const GlobalStyle = createGlobalStyle`
     letter-spacing: 5px;
     margin-bottom: 20px;
     color: ${colors.primary};
+  }
+
+  a {
+    text-decoration: none;
   }
 `
