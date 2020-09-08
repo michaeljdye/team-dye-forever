@@ -56,10 +56,11 @@ const GET_ALL_POSTS = graphql`
 `
 
 const PostCards = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
   justify-content: center;
-  margin: 0 auto 40px;
+  margin: 0 auto;
   max-width: 1000px;
 `
 export default PostLoop

@@ -15,83 +15,51 @@ function urlFor(source) {
 }
 
 const PostCard = ({ id, title, slug, excerpt, image }) => (
-  <PostCardWrapper key={id}>
-    <div>
-      <img src={urlFor(image).url()} alt="" />
-    </div>
-    <div>
+  <Card key={id}>
+    <img src={urlFor(image).url()} alt="" />
+    <CardHeader>
       <Link to={`/blog/${slug.current}`}>
         <h3>{title}</h3>
       </Link>
       <p>{`${excerpt.split(' ').slice(0, 20).join(' ')}...`}</p>
       {/* <p>{excerpt}</p> */}
-      <ButtonPrimary link={`/blog/${slug.current}`}>Read More</ButtonPrimary>
-    </div>
-  </PostCardWrapper>
+    </CardHeader>
+  </Card>
 )
 
-const PostCardWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 90%;
-  width: 900px;
-  box-shadow: 0px 0px 26px 6px #e2e2e2;
-  padding: 0;
-  margin: 0 auto;
-
-  &:not(:first-of-type) {
-    margin-top: 40px;
-  }
+const Card = styled.article`
+  display: grid;
+  background-color: white;
+  border-radius: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  line-height: 1.5;
 
   img {
+    display: block;
     width: 100%;
-    height: 400px;
+    max-width: 100%;
+    height: 250px;
     object-fit: cover;
-    object-position: center center;
   }
+`
 
-  h3 {
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    padding-top: 20px;
-  }
-
-  p {
-    font-size: 1.025rem;
-    text-align: center;
-    letter-spacing: 0.06rem;
-    line-height: 1.8rem;
-    color: #444;
-    margin: 0 auto 40px;
-  }
+const CardHeader = styled.header`
+  padding: 24px;
 
   a {
     text-decoration: none;
-    margin: 0 auto;
-  }
-
-  &:not(:last-of-type) {
-    margin-right: 40px;
-    margin-right: auto;
-  }
-
-  > div:first-of-type {
-    height: 100%;
-    width: 100%;
-  }
-
-  div:last-of-type {
-    padding: 0 15px;
-
-    a {
-      margin: 0 auto;
-    }
   }
 
   h3 {
-    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-weight: 100;
+    margin-bottom: 0;
   }
 `
 
