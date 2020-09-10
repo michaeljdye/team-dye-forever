@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import imageUrlBuilder from '@sanity/image-url'
 import { Link } from 'gatsby'
 import { makeStyles } from '@material-ui/core/styles'
@@ -10,8 +9,6 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import { Button } from 'gatsby-theme-material-ui'
 import Typography from '@material-ui/core/Typography'
-
-import { ButtonPrimary } from '../buttons'
 
 const builder = imageUrlBuilder({
   projectId: 'j7t5zwvc',
@@ -40,9 +37,7 @@ const PostCard = ({ id, title, slug, excerpt, image }) => {
   const withCharLimit = (text, limit) =>
     text
       .split(' ')
-      .filter((word, i) => {
-        if (i <= limit) return true
-      })
+      .filter((word, i) => (i <= limit ? true : false))
       .join(' ')
 
   return (
@@ -63,17 +58,17 @@ const PostCard = ({ id, title, slug, excerpt, image }) => {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions className={classes.center}>
-          <Button
-            to={`/blog/${slug.current}`}
-            variant="outlined"
-            size="small"
-            color="secondary"
-          >
-            Read More
-          </Button>
-        </CardActions>
       </Link>
+      <CardActions className={classes.center}>
+        <Button
+          to={`/blog/${slug.current}`}
+          variant="outlined"
+          size="small"
+          color="secondary"
+        >
+          Read More
+        </Button>
+      </CardActions>
     </Card>
   )
 }

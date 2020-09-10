@@ -10,6 +10,7 @@ const serializers = {
   types: {
     block(props) {
       console.log(props)
+
       switch (props.node.style) {
         default:
           return <p>{props.children}</p>

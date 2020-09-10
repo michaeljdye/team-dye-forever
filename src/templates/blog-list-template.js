@@ -1,17 +1,16 @@
 import React from 'react'
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import styled from 'styled-components'
 import Pagination from '@material-ui/lab/Pagination'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostLoop from '../components/post/post-loop'
-import { below } from '../utils'
 
 const BlogList = ({
   data: {
     allSanityPost: { edges },
   },
-  pathContext: { currentPage, numPages },
+  pageContext: { currentPage, numPages },
 }) => {
   const handlePageChange = (event, value) => {
     const path = value === 1 ? '/' : `/${value}`
@@ -38,7 +37,7 @@ const BlogList = ({
           count={numPages}
           page={currentPage}
           onChange={handlePageChange}
-          color="dark"
+          color="primary"
           variant="outlined"
           shape="rounded"
           size="medium"
