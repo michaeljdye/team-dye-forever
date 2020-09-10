@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 240,
+    height: 200,
   },
   center: {
     justifyContent: 'center',
@@ -36,34 +36,44 @@ const useStyles = makeStyles({
 
 const PostCard = ({ id, title, slug, excerpt, image }) => {
   const classes = useStyles()
-  console.log(image)
+
+  const withCharLimit = (text, limit) =>
+    text
+      .split(' ')
+      .filter((word, i) => {
+        if (i <= limit) return true
+      })
+      .join(' ')
+
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={urlFor(image).url()}
-          title={title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {excerpt}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.center}>
-        <Button
-          to={`/blog/${slug.current}`}
-          variant="outlined"
-          size="small"
-          color="secondary"
-        >
-          Read More
-        </Button>
-      </CardActions>
+      <Link to={`/blog/${slug.current}`}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={urlFor(image).url()}
+            title={title}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h6" component="h2">
+              {withCharLimit(title, 8)}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {withCharLimit(excerpt, 20)}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions className={classes.center}>
+          <Button
+            to={`/blog/${slug.current}`}
+            variant="outlined"
+            size="small"
+            color="secondary"
+          >
+            Read More
+          </Button>
+        </CardActions>
+      </Link>
     </Card>
   )
 }
