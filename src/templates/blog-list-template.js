@@ -13,7 +13,7 @@ const BlogList = ({
   },
   pathContext: { currentPage, numPages },
 }) => {
-  const handlePaginationChange = (event, value) => {
+  const handlePageChange = (event, value) => {
     const path = value === 1 ? '/' : `/${value}`
     navigate(path)
   }
@@ -34,10 +34,14 @@ const BlogList = ({
       </Banner>
       <BlogSection>
         <PostLoop posts={edges} />
-        <Pagination
+        <PaginationStyled
           count={numPages}
           page={currentPage}
-          onChange={handlePaginationChange}
+          onChange={handlePageChange}
+          color="dark"
+          variant="outlined"
+          shape="rounded"
+          size="medium"
         />
       </BlogSection>
       <SEO title="Home" />
@@ -117,12 +121,11 @@ const BlogSection = styled.div`
   }
 `
 
-const PageNums = styled.ul`
-  display: flex;
-  list-style: none;
+const PaginationStyled = styled(Pagination)`
+  margin-top: 40px;
 
-  li + li {
-    margin-left: 10px;
+  ul {
+    justify-content: center;
   }
 `
 

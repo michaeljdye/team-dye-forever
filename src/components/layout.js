@@ -7,6 +7,8 @@
 
 import React from 'react'
 import styled from 'styled-components'
+import { ThemeProvider } from '@material-ui/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -14,6 +16,25 @@ import Header from './header'
 import Footer from './footer'
 
 import { GlobalStyle } from '../utils'
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: '#41ead4',
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#ff206e',
+    },
+    light: {
+      main: '#fff',
+    },
+    dark: {
+      main: '#0b132b',
+    },
+  },
+})
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,14 +48,16 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <LayoutContainer>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <SiteContent>
-        <main>{children}</main>
-      </SiteContent>
-      <Footer />
-      <GlobalStyle />
-    </LayoutContainer>
+    <ThemeProvider theme={theme}>
+      <LayoutContainer>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <SiteContent>
+          <main>{children}</main>
+        </SiteContent>
+        <Footer />
+        <GlobalStyle />
+      </LayoutContainer>
+    </ThemeProvider>
   )
 }
 
