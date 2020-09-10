@@ -23,8 +23,9 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
-  link: {
+  logo: {
     color: colors.light,
+    fontSize: '1.5rem',
   },
 }))
 
@@ -45,30 +46,15 @@ const Header = ({ siteTitle }) => {
     <>
       <AppBar position="sticky" color="secondary">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon onClick={handleClick} />
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
-            <Link className={classes.link} to="/">
+            <Link className={classes.logo} to="/">
               Team Dye Forever
             </Link>
           </Typography>
+          <Button variant="contained" color="primary" to="/contact">
+            Contact
+          </Button>
         </Toolbar>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <MenuItem onClick={handleClose}>About</MenuItem>
-          <MenuItem onClick={handleClose}>Contact</MenuItem>
-        </Menu>
       </AppBar>
     </>
   )
