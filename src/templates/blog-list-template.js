@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import styled from 'styled-components'
+import Pagination from '@material-ui/lab/Pagination'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostLoop from '../components/post/post-loop'
@@ -12,16 +13,9 @@ const BlogList = ({
   },
   pathContext: { currentPage, numPages },
 }) => {
-  const getPageNums = () => {
-    const pageNums = []
-    for (let i = 1; i <= numPages; i++) {
-      pageNums.push(
-        <li>
-          <Link to={`/${i === 1 ? '' : i}`}>{i}</Link>
-        </li>
-      )
-    }
-    return pageNums
+  const handlePaginationChange = (event, value) => {
+    const path = value === 1 ? '/' : `/${value}`
+    navigate(path)
   }
 
   return (
@@ -40,15 +34,11 @@ const BlogList = ({
       </Banner>
       <BlogSection>
         <PostLoop posts={edges} />
-        {currentPage !== 1 && (
-          <Link to={`/${currentPage === 2 ? '' : currentPage - 1}`}>
-            Previous page
-          </Link>
-        )}
-        <PageNums>{getPageNums()}</PageNums>
-        {currentPage !== numPages && (
-          <Link to={`/${currentPage + 1}`}>Next page</Link>
-        )}
+        <Pagination
+          count={numPages}
+          page={currentPage}
+          onChange={handlePaginationChange}
+        />
       </BlogSection>
       <SEO title="Home" />
     </Layout>
