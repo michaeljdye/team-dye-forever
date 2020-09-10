@@ -9,8 +9,7 @@ import { colors } from '../utils'
 const serializers = {
   types: {
     block(props) {
-      console.log(props)
-
+      console.log(props.children)
       switch (props.node.style) {
         default:
           return <p>{props.children}</p>

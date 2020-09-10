@@ -12,12 +12,12 @@ const Footer = () => {
 }
 
 const FooterContainer = styled.div`
-  background: ${colors.dark};
+  background: ${colors.primary};
 
   p {
     max-width: 90%;
     margin: 10px auto;
-    color: ${colors.primary};
+    color: ${colors.dark};
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;
