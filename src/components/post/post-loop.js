@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import PostCard from './post-card'
+import { below } from '../../utils'
 
 const PostLoop = ({ posts }) => (
   <PostCards>
@@ -24,5 +24,9 @@ const PostCards = styled.div`
   justify-content: center;
   margin: 0 auto;
   max-width: 1000px;
+
+  ${below.phone`
+      grid-template-columns: 1fr;
+  `}
 `
 export default PostLoop

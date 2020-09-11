@@ -7,7 +7,6 @@ import Paper from '@material-ui/core/Paper'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostLoop from '../components/post/post-loop'
-import { colors } from '../utils'
 
 const useStyles = makeStyles(theme => ({
   paper: {

@@ -1,21 +1,21 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import styled from 'styled-components'
-import { useForm, ValidationError } from '@statickit/react'
+import { useForm } from '@statickit/react'
 import { Button } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import Layout from '../components/layout'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    transform: 'translateX(-50%)',
+    width: 500,
+    maxWidth: '90%',
     '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
+      marginBottom: 20,
     },
   },
-  textField: {
-    width: 400,
+  button: {
+    marginTop: 20,
   },
 }))
 
@@ -38,15 +38,10 @@ const Contact = () => {
           onSubmit={handleSubmit}
         >
           <div>
-            <TextField label="Name" name="name" className={classes.textField} />
+            <TextField label="Name" name="name" fullWidth />
           </div>
-          <div>
-            <TextField
-              label="Email"
-              name="email"
-              className={classes.textField}
-            />
-          </div>
+
+          <TextField fullWidth label="Email" name="email" />
           <div>
             <TextField
               id="outlined-basic"
@@ -55,12 +50,18 @@ const Contact = () => {
               rows={4}
               multiline
               name="message"
-              className={classes.textField}
+              fullWidth
             />
+
+            <Button
+              variant="contained"
+              color="secondary"
+              type="submit"
+              className={classes.button}
+            >
+              Submit
+            </Button>
           </div>
-          <Button variant="contained" color="secondary" type="submit">
-            Submit
-          </Button>
         </form>
       </FormSection>
     </Layout>

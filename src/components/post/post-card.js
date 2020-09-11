@@ -4,10 +4,8 @@ import { Link } from 'gatsby'
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
-import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
-import { Button } from 'gatsby-theme-material-ui'
 import Typography from '@material-ui/core/Typography'
 
 const builder = imageUrlBuilder({
@@ -20,8 +18,12 @@ function urlFor(source) {
 }
 
 const useStyles = makeStyles({
+  actionArea: {
+    height: '100%',
+  },
   root: {
     maxWidth: 345,
+    height: '100%',
   },
   media: {
     height: 200,
@@ -41,9 +43,9 @@ const PostCard = ({ id, title, slug, excerpt, image }) => {
       .join(' ')
 
   return (
-    <Card className={classes.root}>
-      <Link to={`/blog/${slug.current}`}>
-        <CardActionArea>
+    <CardActionArea className={classes.actionArea}>
+      <Card className={classes.root}>
+        <Link to={`/blog/${slug.current}`}>
           <CardMedia
             className={classes.media}
             image={urlFor(image).url()}
@@ -57,19 +59,9 @@ const PostCard = ({ id, title, slug, excerpt, image }) => {
               {withCharLimit(excerpt, 20)}
             </Typography>
           </CardContent>
-        </CardActionArea>
-      </Link>
-      <CardActions className={classes.center}>
-        <Button
-          to={`/blog/${slug.current}`}
-          variant="outlined"
-          size="small"
-          color="secondary"
-        >
-          Read More
-        </Button>
-      </CardActions>
-    </Card>
+        </Link>
+      </Card>
+    </CardActionArea>
   )
 }
 
