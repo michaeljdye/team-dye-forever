@@ -11,7 +11,6 @@ import { colors } from '../utils'
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    backgroundColor: colors.dark,
     padding: 20,
     marginTop: 40,
   },
@@ -49,7 +48,7 @@ const BlogList = ({
           count={numPages}
           page={currentPage}
           onChange={handlePageChange}
-          color="primary"
+          color="secondary"
           shape="circle"
           size="medium"
         />
@@ -83,11 +82,11 @@ export const BlogListQuery = graphql`
 `
 
 const Heading = styled.h1`
-  color: ${colors.light};
+  color: ${colors.primary};
 `
 
 const Paragraph = styled.p`
-  color: ${colors.light};
+  color: ${colors.text};
   font-size: 1.125rem;
   font-weight: 700;
 `
