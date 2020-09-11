@@ -1,7 +1,7 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from 'react'
+import { StaticKitProvider } from '@statickit/react'
 
-// You can delete this file if you're not using it
+//  Add providers
+export const wrapRootElement = ({ element }) => (
+  <StaticKitProvider site="e54c36be13b4">{element}</StaticKitProvider>
+)
