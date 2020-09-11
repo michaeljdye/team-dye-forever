@@ -7,9 +7,11 @@ import Paper from '@material-ui/core/Paper'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostLoop from '../components/post/post-loop'
+import { colors } from '../utils'
 
 const useStyles = makeStyles(theme => ({
   paper: {
+    backgroundColor: colors.dark,
     padding: 20,
     marginTop: 40,
   },
@@ -30,8 +32,8 @@ const BlogList = ({
   return (
     <Layout>
       <Paper className={classes.paper} elevation={2}>
-        <h1>Welcome to our site</h1>
-        <p>
+        <Heading>Welcome to our site</Heading>
+        <Paragraph>
           A little about us: We’re both extremely techy people who love to
           travel and do nerdy things together (hence why we made this website).
           Nicole is a Creative Director for a marketing agency and Joey is a
@@ -39,7 +41,7 @@ const BlogList = ({
           our journey into parenthood. We’re very excited for what's to come
           next and hope you keep in touch and enjoy our updates—we’ll try to
           keep them as current as life allows.
-        </p>
+        </Paragraph>
       </Paper>
       <BlogSection>
         <PostLoop posts={edges} />
@@ -48,8 +50,7 @@ const BlogList = ({
           page={currentPage}
           onChange={handlePageChange}
           color="primary"
-          variant="outlined"
-          shape="rounded"
+          shape="circle"
           size="medium"
         />
       </BlogSection>
@@ -79,6 +80,16 @@ export const BlogListQuery = graphql`
       }
     }
   }
+`
+
+const Heading = styled.h1`
+  color: ${colors.light};
+`
+
+const Paragraph = styled.p`
+  color: ${colors.light};
+  font-size: 1.125rem;
+  font-weight: 700;
 `
 
 const BlogSection = styled.div`
@@ -122,5 +133,4 @@ const PaginationStyled = styled(Pagination)`
     justify-content: center;
   }
 `
-
 export default BlogList
