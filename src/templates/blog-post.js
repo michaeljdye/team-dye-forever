@@ -41,6 +41,7 @@ export default function BlogPost({
         thumbnailHeight: 400,
       }))
     : []
+
   return (
     <Layout>
       <div

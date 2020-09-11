@@ -2,9 +2,19 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import styled from 'styled-components'
 import Pagination from '@material-ui/lab/Pagination'
+import { makeStyles } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostLoop from '../components/post/post-loop'
+import { colors } from '../utils'
+
+const useStyles = makeStyles(theme => ({
+  paper: {
+    padding: 20,
+    marginTop: 40,
+  },
+}))
 
 const BlogList = ({
   data: {
@@ -12,6 +22,7 @@ const BlogList = ({
   },
   pageContext: { currentPage, numPages },
 }) => {
+  const classes = useStyles()
   const handlePageChange = (event, value) => {
     const path = value === 1 ? '/' : `/${value}`
     navigate(path)
@@ -19,7 +30,7 @@ const BlogList = ({
 
   return (
     <Layout>
-      <Banner>
+      <Paper className={classes.paper} elevation={2}>
         <h1>Welcome to our site</h1>
         <p>
           A little about us: We’re both extremely techy people who love to
@@ -30,7 +41,7 @@ const BlogList = ({
           next and hope you keep in touch and enjoy our updates—we’ll try to
           keep them as current as life allows.
         </p>
-      </Banner>
+      </Paper>
       <BlogSection>
         <PostLoop posts={edges} />
         <PaginationStyled
@@ -68,21 +79,6 @@ export const BlogListQuery = graphql`
         }
       }
     }
-  }
-`
-
-const Banner = styled.div`
-  padding: 60px 0 0 0;
-  h1 {
-    font-size: 36px;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 300;
   }
 `
 

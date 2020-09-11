@@ -21,6 +21,9 @@ const useStyles = makeStyles(theme => ({
     color: colors.light,
     fontSize: '1.5rem',
   },
+  button: {
+    color: colors.dark,
+  },
 }))
 
 const Header = ({ siteTitle }) => {
@@ -35,7 +38,12 @@ const Header = ({ siteTitle }) => {
               Team Dye Forever
             </Link>
           </Typography>
-          <Button variant="contained" color="primary" to="/contact">
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="primary"
+            to="/contact"
+          >
             Contact
           </Button>
         </Toolbar>
