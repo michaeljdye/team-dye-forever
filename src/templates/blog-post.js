@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import SimpleReactLightbox from 'simple-react-lightbox'
+import { SRLWrapper } from 'simple-react-lightbox'
 import { graphql } from 'gatsby'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
-import Gallery from 'react-grid-gallery'
-
 import Layout from '../components/layout'
-
 import { colors } from '../utils'
+import { light } from '@material-ui/core/styles/createPalette'
 
 const builder = imageUrlBuilder({
   projectId: 'j7t5zwvc',
@@ -35,16 +35,9 @@ export default function BlogPost({
   },
 }) {
   const images = gallery[0]
-    ? gallery[0].images.map((image, i) => {
-        const width = Math.floor(Math.random() * 400) + 200
-        const height = i % 2 === 0 ? width : width - 50
-        return {
-          src: image.asset.url,
-          thumbnail: urlFor(image).width(width).height(height),
-          thumbnailWidth: width,
-          thumbnailHeight: height,
-        }
-      })
+    ? gallery[0].images.map(image => ({
+        src: urlFor(image).width(400).height(400),
+      }))
     : []
 
   return (
@@ -82,18 +75,29 @@ export default function BlogPost({
             projectId="j7t5zwvc"
             dataset="production"
           />
-          <GalleryContainer>
-            <Gallery images={images} enableImageSelection={false} margin={2} />
-          </GalleryContainer>
+          <SimpleReactLightbox>
+            <Gallery>
+              <SRLWrapper>
+                {images &&
+                  images.map(({ src }) => (
+                    <li>
+                      <img src={src} alt="" />
+                    </li>
+                  ))}
+              </SRLWrapper>
+            </Gallery>
+          </SimpleReactLightbox>
         </div>
       </div>
     </Layout>
   )
 }
 
-const GalleryContainer = styled.div`
-  .ReactGridGallery_tile {
-    background-color: transparent !important;
+const Gallery = styled.ul`
+  > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
   }
 `
 
