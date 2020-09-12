@@ -30,18 +30,16 @@ const BlogList = ({
 
   return (
     <Layout>
-      <Paper className={classes.paper} elevation={2}>
-        <Heading>Welcome to our site</Heading>
-        <Paragraph>
-          A little about us: We’re both extremely techy people who love to
-          travel and do nerdy things together (hence why we made this website).
-          Nicole is a Creative Director for a marketing agency and Joey is a
-          Frontend Developer for the tech company, Campaign Monitor. Join us in
-          our journey into parenthood. We’re very excited for what's to come
-          next and hope you keep in touch and enjoy our updates—we’ll try to
-          keep them as current as life allows.
-        </Paragraph>
-      </Paper>
+      <Heading>Welcome to our site</Heading>
+      <Paragraph>
+        A little about us: We’re both extremely techy people who love to travel
+        and do nerdy things together (hence why we made this website). Nicole is
+        a Creative Director for a marketing agency and Joey is a Frontend
+        Developer for the tech company, Campaign Monitor. Join us in our journey
+        into parenthood. We’re very excited for what's to come next and hope you
+        keep in touch and enjoy our updates—we’ll try to keep them as current as
+        life allows.
+      </Paragraph>
       <BlogSection>
         <PostLoop posts={edges} />
         <PaginationStyled
@@ -83,12 +81,12 @@ export const BlogListQuery = graphql`
 
 const Heading = styled.h1`
   color: ${colors.primary};
+  margin-top: 40px;
 `
 
 const Paragraph = styled.p`
   color: ${colors.text};
-  font-size: 1.125rem;
-  font-weight: 700;
+  font-size: 1rem;
 `
 
 const BlogSection = styled.div`

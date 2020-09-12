@@ -7,6 +7,8 @@ import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
+import CardActions from '@material-ui/core/CardActions'
+import { Button } from 'gatsby-theme-material-ui'
 
 const builder = imageUrlBuilder({
   projectId: 'j7t5zwvc',
@@ -18,9 +20,6 @@ function urlFor(source) {
 }
 
 const useStyles = makeStyles({
-  actionArea: {
-    height: '100%',
-  },
   root: {
     maxWidth: 345,
     height: '100%',
@@ -43,25 +42,33 @@ const PostCard = ({ id, title, slug, excerpt, image }) => {
       .join(' ')
 
   return (
-    <CardActionArea className={classes.actionArea}>
-      <Card className={classes.root}>
+    <Card className={classes.root}>
+      <CardMedia
+        className={classes.media}
+        image={urlFor(image).url()}
+        title={title}
+      />
+      <CardContent>
         <Link to={`/blog/${slug.current}`}>
-          <CardMedia
-            className={classes.media}
-            image={urlFor(image).url()}
-            title={title}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h6" component="h2">
-              {withCharLimit(title, 8)}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {withCharLimit(excerpt, 20)}
-            </Typography>
-          </CardContent>
+          <Typography gutterBottom variant="h6" component="h2">
+            {withCharLimit(title, 8)}
+          </Typography>
         </Link>
-      </Card>
-    </CardActionArea>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {withCharLimit(excerpt, 20)}
+        </Typography>
+      </CardContent>
+      <CardActions className={classes.center}>
+        <Button
+          to={`/blog/${slug.current}`}
+          variant="outlined"
+          size="small"
+          color="secondary"
+        >
+          Read More
+        </Button>
+      </CardActions>
+    </Card>
   )
 }
 
