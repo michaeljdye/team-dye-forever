@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
@@ -34,12 +35,16 @@ export default function BlogPost({
   },
 }) {
   const images = gallery[0]
-    ? gallery[0].images.map(image => ({
-        src: image.asset.url,
-        thumbnail: urlFor(image).width(400).height(400),
-        thumbnailWidth: 400,
-        thumbnailHeight: 400,
-      }))
+    ? gallery[0].images.map((image, i) => {
+        const width = Math.floor(Math.random() * 400) + 200
+        const height = i % 2 === 0 ? width : width - 50
+        return {
+          src: image.asset.url,
+          thumbnail: urlFor(image).width(width).height(height),
+          thumbnailWidth: width,
+          thumbnailHeight: height,
+        }
+      })
     : []
 
   return (
@@ -77,17 +82,20 @@ export default function BlogPost({
             projectId="j7t5zwvc"
             dataset="production"
           />
-          <Gallery
-            images={images}
-            enableImageSelection={false}
-            margin={0}
-            rowHeight={200}
-          />
+          <GalleryContainer>
+            <Gallery images={images} enableImageSelection={false} margin={2} />
+          </GalleryContainer>
         </div>
       </div>
     </Layout>
   )
 }
+
+const GalleryContainer = styled.div`
+  .ReactGridGallery_tile {
+    background-color: transparent !important;
+  }
+`
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
