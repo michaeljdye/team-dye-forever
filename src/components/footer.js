@@ -17,7 +17,7 @@ const FooterContainer = styled.div`
   p {
     max-width: 90%;
     margin: 10px auto;
-    color: ${colors.dark};
+    color: ${colors.light};
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;

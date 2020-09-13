@@ -59,12 +59,7 @@ const PostCard = ({ id, title, slug, excerpt, image }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.center}>
-        <Button
-          to={`/blog/${slug.current}`}
-          variant="outlined"
-          size="small"
-          color="secondary"
-        >
+        <Button to={`/blog/${slug.current}`} size="small" color="secondary">
           Read More
         </Button>
       </CardActions>

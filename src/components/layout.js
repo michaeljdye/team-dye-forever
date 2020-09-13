@@ -20,16 +20,16 @@ import { GlobalStyle } from '../utils'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#41ead4',
+      main: '#ff00a0',
     },
     secondary: {
-      main: '#ff206e',
+      main: '#7a04eb',
     },
     light: {
       main: '#fff',
     },
     dark: {
-      main: '#0b132b',
+      main: '#120458',
     },
   },
 })

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '1.5rem',
   },
   button: {
-    color: colors.dark,
+    color: colors.light,
   },
 }))
 
@@ -31,7 +31,7 @@ const Header = ({ siteTitle }) => {
 
   return (
     <>
-      <AppBar position="sticky" color="secondary">
+      <AppBar position="sticky" style={{ background: colors.dark }}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link className={classes.logo} to="/">
