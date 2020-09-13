@@ -47,7 +47,7 @@ const BlogList = ({
           page={currentPage}
           onChange={handlePageChange}
           color="secondary"
-          shape="circle"
+          shape="rounded"
           size="medium"
         />
       </BlogSection>
