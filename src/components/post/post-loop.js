@@ -23,7 +23,7 @@ const PostCards = styled.div`
   grid-gap: 20px;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 100%;
 
   ${below.phone`
       grid-template-columns: 1fr;

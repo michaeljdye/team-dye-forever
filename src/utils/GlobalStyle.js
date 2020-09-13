@@ -37,4 +37,11 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none !important;
   }
+
+   p {
+    font-size: 1.025rem;
+    letter-spacing: 0.06rem;
+    line-height: 1.5rem;
+    color: #444;
+  }
 `

@@ -21,7 +21,7 @@ function urlFor(source) {
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: '100%',
     height: '100%',
   },
   media: {
@@ -50,11 +50,16 @@ const PostCard = ({ id, title, slug, excerpt, image }) => {
       />
       <CardContent>
         <Link to={`/blog/${slug.current}`}>
-          <Typography gutterBottom variant="h6" component="h2">
+          <Typography align="center" gutterBottom variant="h6" component="h2">
             {withCharLimit(title, 8)}
           </Typography>
         </Link>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography
+          align="center"
+          variant="body2"
+          color="textSecondary"
+          component="p"
+        >
           {withCharLimit(excerpt, 20)}
         </Typography>
       </CardContent>

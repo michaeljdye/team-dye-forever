@@ -90,37 +90,8 @@ const Paragraph = styled.p`
 `
 
 const BlogSection = styled.div`
-  max-width: 90%;
   margin: 0 auto;
   padding: 60px 0;
-
-  h2,
-  p {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  h2 {
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-  }
-
-  a {
-    margin: 0 auto;
-  }
-
-  p {
-    font-size: 1.025rem;
-    -webkit-letter-spacing: 0.06rem;
-    -moz-letter-spacing: 0.06rem;
-    -ms-letter-spacing: 0.06rem;
-    letter-spacing: 0.06rem;
-    line-height: 1.8rem;
-    color: #444;
-    margin: 0 auto 40px;
-  }
 `
 
 const PaginationStyled = styled(Pagination)`
