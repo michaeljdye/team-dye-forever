@@ -36,7 +36,7 @@ export default function BlogPost({
 }) {
   const images = gallery[0]
     ? gallery[0].images.map(image => ({
-        src: urlFor(image).width(400).height(400),
+        src: urlFor(image).width(800),
       }))
     : []
 
@@ -56,15 +56,6 @@ export default function BlogPost({
             line-height: 1.8rem;
             color: ${colors.text};
           }
-
-          figure {
-            margin: 0;
-          }
-
-          img {
-            width: 800px;
-            max-width: 100%;
-          }
         `}
       >
         <h1>{title}</h1>
@@ -79,10 +70,10 @@ export default function BlogPost({
             <Gallery>
               <SRLWrapper>
                 {images &&
-                  images.map(({ src }) => (
-                    <li>
+                  images.map(({ src, height, width }) => (
+                    <GalleryItem>
                       <img src={src} alt="" />
-                    </li>
+                    </GalleryItem>
                   ))}
               </SRLWrapper>
             </Gallery>
@@ -95,9 +86,29 @@ export default function BlogPost({
 
 const Gallery = styled.ul`
   > div {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -8px;
+    width: 100%;
     list-style: none;
+  }
+`
+
+const GalleryItem = styled.li`
+  flex: auto;
+  height: 250px;
+  min-width: 150px;
+  margin: 0 8px 8px 0;
+
+  img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+
+    @media (max-width: 600px) {
+      height: 100%;
+      width: 100%;
+    }
   }
 `
 
