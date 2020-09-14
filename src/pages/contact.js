@@ -69,7 +69,8 @@ const Contact = () => {
 }
 
 const ContactHeading = styled.h1`
-  margin: 40px auto 0;
+  margin: 0 auto 20px;
+  padding: 60px 0 0;
   text-align: center;
 `
 
