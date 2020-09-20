@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostLoop from '../components/post/post-loop'
 import { colors } from '../utils'
-import DyeFamilyImg from '../images/dye-family.jpg'
+import DyeFamilyImg from '../images/team-dye.png'
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -102,8 +102,13 @@ const Hero = styled.div`
 `
 
 const Heading = styled.h1`
-  color: ${colors.primary};
+  background: ${colors.primary};
+  width: fit-content;
+  color: ${colors.light};
+  padding: 10px 20px 5px;
   margin-top: 40px;
+  font-size: 1.25rem;
+  transform: skew(-13deg);
 `
 
 const Paragraph = styled.p`

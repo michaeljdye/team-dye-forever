@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import CardActions from '@material-ui/core/CardActions'
 import { Button } from 'gatsby-theme-material-ui'
+import { colors } from '../../utils'
 
 const builder = imageUrlBuilder({
   projectId: 'j7t5zwvc',
@@ -23,12 +24,17 @@ const useStyles = makeStyles({
   root: {
     maxWidth: '100%',
     height: '100%',
+    boxShadow: '0 0 30px rgba(0, 0, 0, 0.2)',
   },
   media: {
     height: 200,
   },
   center: {
     justifyContent: 'center',
+  },
+  button: {
+    marginBottom: 10,
+    color: colors.dark,
   },
 })
 
@@ -64,7 +70,13 @@ const PostCard = ({ id, title, slug, excerpt, image }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.center}>
-        <Button to={`/blog/${slug.current}`} size="small" color="secondary">
+        <Button
+          to={`/blog/${slug.current}`}
+          size="medium"
+          color="primary"
+          variant="outlined"
+          className={classes.button}
+        >
           Read More
         </Button>
       </CardActions>

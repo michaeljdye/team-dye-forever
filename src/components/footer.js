@@ -12,17 +12,16 @@ const Footer = () => {
 }
 
 const FooterContainer = styled.div`
-  background: ${colors.primary};
+  background: ${colors.dark};
 
   p {
     max-width: 90%;
     margin: 10px auto;
-    color: ${colors.light};
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: 600;
-    color: ${colors.white};
+    color: ${colors.light};
 
     ${below.phone`
       font-size: 0.75rem;
